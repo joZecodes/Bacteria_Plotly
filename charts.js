@@ -90,8 +90,24 @@ function buildCharts(sample) {
       //showticklabels: true
      
     };
+    // Bar and Bubble charts
+    // Create the buildCharts function.
+    //function buildCharts(sample) {
+   // Use d3.json to load and retrieve the samples.json file 
+   //d3.json("samples.json").then((data) => {
     // 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot("bar", barData, barLayout);
  
   });
 }
+
+ // 1. Create the trace for the bubble chart.
+ var bubbleChart = {
+  x: sampleIds,
+  y: sampleValues,
+  text: sampleLabels,
+  mode: 'markers',
+  marker: {
+    size: sampleValues,
+    color: sampleIds
+}};
